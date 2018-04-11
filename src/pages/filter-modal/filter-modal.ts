@@ -1,25 +1,26 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 
-/**
- * Generated class for the FilterModalPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+/*
+  Generated class for the FilterModal page.
 
-@IonicPage()
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+*/
 @Component({
   selector: 'page-filter-modal',
-  templateUrl: 'filter-modal.html',
+  templateUrl: 'filter-modal.html'
 })
 export class FilterModalPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+  constructor( public navCtrl: NavController, public navParams: NavParams) {}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad FilterModalPage');
+  }
+
+  closeModal(){
+    this.navCtrl.pop();
   }
 
 }
