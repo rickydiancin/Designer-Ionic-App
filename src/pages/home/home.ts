@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Http } from "@angular/http";
 import "rxjs/add/operator/map";
-import { NavController } from 'ionic-angular';
+import { NavController,ModalController } from 'ionic-angular';
 import { ProductService } from '../../providers/product';
 import { ProductDetailPage } from '../product-detail/product-detail';
 
@@ -13,7 +13,7 @@ export class HomePage {
 
   public allProducts = [];
 
-  constructor(private productService: ProductService, public navCtrl: NavController) {
+  constructor(private modalController: ModalController, private productService: ProductService, public navCtrl: NavController) {
 
   }
 
@@ -24,6 +24,10 @@ export class HomePage {
           this.allProducts = response;
           console.log(this.allProducts);
       });    
+  }
+  openFilterModal(){
+    let openFilterModal = this.modalController.create(FilterModalPage);
+    openFilterModal.present();
   }
 
   goToProductDetailPage(product){
